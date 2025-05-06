@@ -21,7 +21,7 @@ cd mmha-28
    tbd
 ```
 Alternatively, a mini-sample version is available, containing data from one subject in session_1 and session_2, across all human actions. This is option for testing and visualization:
-[tomirisss/mini-mmha-28](https://huggingface.co/tomirisss/mini-mmha)
+[tomirisss/mini-mmha-28](https://huggingface.co/datasets/tomirisss/mini-mmha)
 ```
 huggingface-cli upload tomirisss/mini-mmha . --repo-type=dataset
 ```
