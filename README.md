@@ -1,40 +1,69 @@
-## Hi there 👋
+## MMHA-28: Human Action Recognition Across RGB, Depth, Thermal, and Event Modalities 
 
-run this command to download the docker image needed to run this project or run pip -r requirements.txt
-docker pull mmhm28/mmha-28:latest
+This repository provides the official implementation, dataset, and training scripts for **MMHA-28: Human Action Recognition Across RGB, Depth, Thermal, and Event Modalities** paper. 
+It includes a baseline model based on the [VideoMamba](https://arxiv.org/abs/2403.13485) architecture.
 
-Plese download the repisotory
-Run commands to mount to libraries in the VideoMamba/ directory:
+## Installation
+### 1. Clone the Repository
+cd mmha-28
 
-pip3 install -e mamba
-pip3 install -e causal-conv1d
+### 2. Pull the Docker image to ensure a consistent environment
 
+   ```
+   docker pull mmhm28/mmha-28:latest
+   ```
 
-Download the MMHA-28 dataset using the link below:
+### 3. Install the following local modules required by the VideoMamba architecture
+   ```
+   pip install -e mamba
+   pip install -e causal-conv1d
+   ```
 
-Another option is to download the mini sample of this dataset, which contain 1 subject folder from session_1 and session_2 with all human actions:
+## Our MMHA-28 Dataset
+### 1.Download the MMHA-28 dataset from the official source
+   ```
+   tbd
+   ```
+Alternatively, a mini-sample version is available, containing data from one subject in session_1 and session_2, across all human actions. This is option for testing and visualization.
 
-http:/dataset
+### 2. Visualization
+To visualize data from the mini-sample, run the following script with appropriate parameters:
+   ```
+   python vis.py --path PATH_TO_DATA --session session_1 --exp_num EXP_NUMBER
+   ```
 
-To visulalise the mini sample run the code with indication of path, session number (session_1 or session_2) and experiment number (exp_num):
+## Training
 
-python vis.py
-
-The path to video folders are available in the train.csv, val.csv, test.csv. You can change it accordingly:
-path_to_video_folder human_action_class
-
-To start training on the MMHA-28 dataset run  
-
+Navigate to the directory of the project:
+   ```
 cd videomamba/video_sm/
-python3 run.py
+   ```
 
-in run.py line 23 (--nproc_per_node=) you need to specify how many gpus you have for your training and specify --num_frames.
+The video folder paths used during training, validation, and testing are specified in the "data/" directory, within the train.csv, val.csv, and test.csv files.
+   ```
+   path_to_video_folder  human_action_class
+   ```
 
-To test the model you need to download our final Multimodal VideoMamba models from hugging face, where MV-Mamba_f16.pth means model trained on num_frames=16: 
+To begin training on the MMHA-28 dataset, first edit line 23 of the run.py script to set the --nproc_per_node= parameter according to the number of GPUs available on your system. Then, run:
 
-🔗 [tomirisss/MV-Mamba](https://huggingface.co/tomirisss/MV-Mamba)
+   ```
+   python3 run.py
+   ```
 
-Then run code with changing parameter "--num_frames" and paths LOG_DIR  and MODEL_PATH:
+## Evaluation
+
+To test a pretrained model, first download the final Multimodal VideoMamba checkpoint:
+
+[tomirisss/MV-Mamba](https://huggingface.co/tomirisss/MV-Mamba)
+
+MV-Mamba is the final multimodal model. The filename also indicates the number of frames used during training (e.g., MV-Mamba_f16.pth was trained with --num_frames=16).
+
+Then, run the script, updating the --num_frames parameter and specifying the appropriate paths for --log_dir and --model_path
+
+   ```
+   python3 run_test.py
+   ```
+
 
 
 
