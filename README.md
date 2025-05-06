@@ -1,7 +1,7 @@
 ## MMHA-28: Human Action Recognition Across RGB, Depth, Thermal, and Event Modalities 
 
 This repository provides the official implementation, dataset, and training scripts for MMHA-28: Human Action Recognition Across RGB, Depth, Thermal, and Event Modalities paper. 
-It includes a codes adapted from the [VideoMamba][(https://github.com/OpenGVLab/VideoMamba/tree/main?tab=readme-ov-file].
+It includes a codes adapted from the [VideoMamba][https://github.com/OpenGVLab/VideoMamba/tree/main?tab=readme-ov-file].
 
 ## Installation
 ### 1. Clone the Repository
