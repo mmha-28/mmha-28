@@ -1,7 +1,7 @@
 ## MMHA-28: Human Action Recognition Across RGB, Depth, Thermal, and Event Modalities 
 
 This repository provides the official implementation, dataset, and training scripts for **MMHA-28: Human Action Recognition Across RGB, Depth, Thermal, and Event Modalities** paper. 
-It includes a baseline model based on the [VideoMamba](https://arxiv.org/abs/2403.13485) architecture.
+It includes a baseline model based on the [VideoMamba](https://arxiv.org/abs/2403.13485) architecture codes.
 
 ## Installation
 ### 1. Clone the Repository
