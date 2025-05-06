@@ -70,7 +70,7 @@ or using this code:
 
 MV-Mamba is the final multimodal model. The filename also indicates the number of frames used during training (e.g., MV-Mamba_f16.pth was trained with --num_frames=16).
 
-Then, run the script, updating the --num_frames parameter and specifying the appropriate paths for --log_dir and --model_path
+Then, run the script, updating the --num_frames parameter and specifying the appropriate paths for MODEL_PATH.
 
    ```
    python3 run_test.py
